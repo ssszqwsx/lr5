@@ -42,5 +42,17 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.calc.divide(10, 0)
 
+    def test_power(self):
+        self.assertEqual(self.calc.power(2, 3), 8)
+        self.assertEqual(self.calc.power(5, 0), 1)
+
+    def test_gcd(self):
+        self.assertEqual(self.calc.gcd(48, 18), 6)
+        self.assertEqual(self.calc.gcd(-48, 18), 6)
+
+    def test_lcm(self):
+        self.assertEqual(self.calc.lcm(4, 5), 20)
+        self.assertEqual(self.calc.lcm(0, 5), 0)
+
 if __name__ == "__main__":
     unittest.main()
