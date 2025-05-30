@@ -46,6 +46,10 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calc.power(2, 3), 8)
         self.assertEqual(self.calc.power(5, 0), 1)
 
+    def test_zero_power_zero(self):
+        with self.assertRaises(ValueError):
+            self.calc.power(0, 0)
+
     def test_gcd(self):
         self.assertEqual(self.calc.gcd(48, 18), 6)
         self.assertEqual(self.calc.gcd(-48, 18), 6)
