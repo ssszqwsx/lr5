@@ -13,7 +13,9 @@ class Calculator:
             raise ValueError("Division by zero is not allowed")
         return a / b
     
-        def power(self, base: int, exp: int) -> int:
+    def power(self, base: int, exp: int) -> int:
+        if base == 0 and exp == 0:
+            raise ValueError("0 to the power of 0 is undefined")
         return base ** exp
 
     def gcd(self, a: int, b: int) -> int:
